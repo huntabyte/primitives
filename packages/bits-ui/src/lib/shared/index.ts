@@ -40,6 +40,9 @@ export type WithoutChildren<T> = T extends { children?: any } ? Omit<T, "childre
 // eslint-disable-next-line ts/no-explicit-any
 export type WithoutChild<T> = T extends { child?: any } ? Omit<T, "child"> : T;
 export type WithElementRef<T, U extends HTMLElement = HTMLElement> = T & { ref?: U | null };
+
+export type GetRootNode = () => Document | ShadowRoot;
+
 export type { EditableSegmentPart } from "./date/types.js";
 export type {
 	Month,

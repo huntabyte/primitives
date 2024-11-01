@@ -1,5 +1,38 @@
 import type { FocusableTarget } from "./focus.js";
 
+const ELEMENT_NODE: typeof Node.ELEMENT_NODE = 1;
+const DOCUMENT_NODE: typeof Node.DOCUMENT_NODE = 9;
+const DOCUMENT_FRAGMENT_NODE: typeof Node.DOCUMENT_FRAGMENT_NODE = 11;
+
+export function isObject(v: unknown): v is Record<string, unknown> {
+	return typeof v === "object" && v !== null;
+}
+
+export function isDocument(node: unknown): node is Document {
+	return isObject(node) && node.nodeType === DOCUMENT_NODE;
+}
+
+export function isWindow(node: unknown): node is Window {
+	return isObject(node) && node === node.window;
+}
+
+export function isNode(node: unknown): node is Node {
+	return isObject(node) && node.nodeType !== undefined;
+}
+
+export function isShadowRoot(node: unknown): node is ShadowRoot {
+	return isNode(node) && node.nodeType === DOCUMENT_FRAGMENT_NODE && "host" in node;
+}
+
+export function getNodeName(node: Node | Window): string {
+	if (isHTMLElement(node)) return node.localName || "";
+	return "#document";
+}
+
+export function isRootElement(node: Node): boolean {
+	return ["html", "body", "#document"].includes(getNodeName(node));
+}
+
 export const isBrowser = typeof document !== "undefined";
 
 export const isIOS = getIsIOS();

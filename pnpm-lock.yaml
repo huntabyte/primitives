@@ -63,8 +63,8 @@ importers:
         specifier: ^0.15.2
         version: 0.15.2(svelte@5.1.0)
       svelte-toolbelt:
-        specifier: ^0.4.4
-        version: 0.4.4(svelte@5.1.0)
+        specifier: ^0.4.6
+        version: 0.4.6(svelte@5.1.0)
     devDependencies:
       '@sveltejs/kit':
         specifier: ^2.5.28
@@ -135,10 +135,10 @@ importers:
         version: 10.3.1
       '@testing-library/jest-dom':
         specifier: ^6.4.6
-        version: 6.4.6(@types/jest@29.5.12)(vitest@2.1.1)
+        version: 6.4.6(@types/jest@29.5.12)(vitest@2.1.1(@types/node@20.14.10)(@vitest/ui@2.1.1)(jsdom@24.1.0)(terser@5.34.1))
       '@testing-library/svelte':
         specifier: ^5.2.1
-        version: 5.2.1(svelte@5.1.0)(vite@5.4.6(@types/node@20.14.10)(terser@5.34.1))(vitest@2.1.1)
+        version: 5.2.1(svelte@5.1.0)(vite@5.4.6(@types/node@20.14.10)(terser@5.34.1))(vitest@2.1.1(@types/node@20.14.10)(@vitest/ui@2.1.1)(jsdom@24.1.0)(terser@5.34.1))
       '@testing-library/user-event':
         specifier: ^14.5.2
         version: 14.5.2(@testing-library/dom@10.3.1)
@@ -2858,9 +2858,6 @@ packages:
   inline-style-parser@0.1.1:
     resolution: {integrity: sha512-7NXolsK4CAS5+xvdj5OMMbI962hU/wvwoxk+LWR9Ek9bVtyuuYScDN6eS0rUm6TxApFpw7CX1o4uJzcd4AyD3Q==}
 
-  inline-style-parser@0.2.3:
-    resolution: {integrity: sha512-qlD8YNDqyTKTyuITrDOffsl6Tdhv+UC4hcdAVuQsK4IMQ99nSgd1MIA/Q+jQYoh9r3hVUXhYh7urSRmXPkW04g==}
-
   inline-style-parser@0.2.4:
     resolution: {integrity: sha512-0aO8FkhNZlj/ZIbNi7Lxxr12obT7cL1moPfE4tg1LkX7LlLfC6DeX4l2ZEud1ukP9jNQyNnfzQVqwbwmAATY4Q==}
 
@@ -4171,9 +4168,6 @@ packages:
   style-to-object@0.4.4:
     resolution: {integrity: sha512-HYNoHZa2GorYNyqiCaBgsxvcJIn7OHq6inEga+E6Ke3m5JkoqpQbnFssk4jwe+K7AhGa2fcha4wSOf1Kn01dMg==}
 
-  style-to-object@1.0.6:
-    resolution: {integrity: sha512-khxq+Qm3xEyZfKd/y9L3oIWQimxuc4STrQKtQn8aSDRHb8mFgpukgX1hdzfrMEW6JCjyJ8p89x+IUMVnCBI1PA==}
-
   style-to-object@1.0.8:
     resolution: {integrity: sha512-xT47I/Eo0rwJmaXC4oilDGDWLohVhR6o/xAQcPQN8q6QBuZVL8qMYL85kLmST5cPjAorwvqIA4qXTRQoYHaL6g==}
 
@@ -4220,8 +4214,8 @@ packages:
     peerDependencies:
       svelte: ^3.0.0 || ^4.0.0 || ^5.0.0-next.1
 
-  svelte-toolbelt@0.4.4:
-    resolution: {integrity: sha512-sNSJ4zUUVpou/p7O2IagMGfSPKHwqsOCYvDceFEMoPmkRXlNDvRethDDAzYM8hO3ayYpdEAPG4H8wsD385hspw==}
+  svelte-toolbelt@0.4.6:
+    resolution: {integrity: sha512-k8OUvXBUifHZcAlWeY/HLg/4J0v5m2iOfOhn8fDmjt4AP8ZluaDh9eBFus9lFiLX6O5l6vKqI1dKL5wy7090NQ==}
     engines: {node: '>=18', pnpm: '>=8.7.0'}
     peerDependencies:
       svelte: ^5.0.0-next.126
@@ -4762,7 +4756,7 @@ snapshots:
       '@antfu/install-pkg': 0.3.3
       '@clack/prompts': 0.7.0
       '@stylistic/eslint-plugin': 2.6.0-beta.0(eslint@9.6.0)(typescript@5.6.2)
-      '@typescript-eslint/eslint-plugin': 8.0.0-alpha.40(@typescript-eslint/parser@8.0.0-alpha.40(eslint@9.6.0)(typescript@5.6.2))(eslint@9.6.0)(typescript@5.6.2)
+      '@typescript-eslint/eslint-plugin': 8.0.0-alpha.40(@typescript-eslint/parser@7.16.0(eslint@9.6.0)(typescript@5.6.2))(eslint@9.6.0)(typescript@5.6.2)
       '@typescript-eslint/parser': 8.0.0-alpha.40(eslint@9.6.0)(typescript@5.6.2)
       eslint: 9.6.0
       eslint-config-flat-gitignore: 0.1.7
@@ -5871,7 +5865,7 @@ snapshots:
       lz-string: 1.5.0
       pretty-format: 27.5.1
 
-  '@testing-library/jest-dom@6.4.6(@types/jest@29.5.12)(vitest@2.1.1)':
+  '@testing-library/jest-dom@6.4.6(@types/jest@29.5.12)(vitest@2.1.1(@types/node@20.14.10)(@vitest/ui@2.1.1)(jsdom@24.1.0)(terser@5.34.1))':
     dependencies:
       '@adobe/css-tools': 4.4.0
       '@babel/runtime': 7.24.8
@@ -5885,7 +5879,7 @@ snapshots:
       '@types/jest': 29.5.12
       vitest: 2.1.1(@types/node@20.14.10)(@vitest/ui@2.1.1)(jsdom@24.1.0)(terser@5.34.1)
 
-  '@testing-library/svelte@5.2.1(svelte@5.1.0)(vite@5.4.6(@types/node@20.14.10)(terser@5.34.1))(vitest@2.1.1)':
+  '@testing-library/svelte@5.2.1(svelte@5.1.0)(vite@5.4.6(@types/node@20.14.10)(terser@5.34.1))(vitest@2.1.1(@types/node@20.14.10)(@vitest/ui@2.1.1)(jsdom@24.1.0)(terser@5.34.1))':
     dependencies:
       '@testing-library/dom': 10.3.1
       svelte: 5.1.0
@@ -6012,10 +6006,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/eslint-plugin@8.0.0-alpha.40(@typescript-eslint/parser@8.0.0-alpha.40(eslint@9.6.0)(typescript@5.6.2))(eslint@9.6.0)(typescript@5.6.2)':
+  '@typescript-eslint/eslint-plugin@8.0.0-alpha.40(@typescript-eslint/parser@7.16.0(eslint@9.6.0)(typescript@5.6.2))(eslint@9.6.0)(typescript@5.6.2)':
     dependencies:
       '@eslint-community/regexpp': 4.11.0
-      '@typescript-eslint/parser': 8.0.0-alpha.40(eslint@9.6.0)(typescript@5.6.2)
+      '@typescript-eslint/parser': 7.16.0(eslint@9.6.0)(typescript@5.6.2)
       '@typescript-eslint/scope-manager': 8.0.0-alpha.40
       '@typescript-eslint/type-utils': 8.0.0-alpha.40(eslint@9.6.0)(typescript@5.6.2)
       '@typescript-eslint/utils': 8.0.0-alpha.40(eslint@9.6.0)(typescript@5.6.2)
@@ -6203,22 +6197,13 @@ snapshots:
       chai: 5.1.1
       tinyrainbow: 1.2.0
 
-  '@vitest/mocker@2.1.1(@vitest/spy@2.1.1)(vite@5.4.6(@types/node@20.14.10)(terser@5.34.1))':
+  '@vitest/mocker@2.1.1(@vitest/spy@2.1.1)(vite@5.4.6)':
     dependencies:
       '@vitest/spy': 2.1.1
       estree-walker: 3.0.3
       magic-string: 0.30.11
     optionalDependencies:
       vite: 5.4.6(@types/node@20.14.10)(terser@5.34.1)
-
-  '@vitest/mocker@2.1.1(@vitest/spy@2.1.1)(vite@5.4.6(@types/node@20.16.10)(terser@5.34.1))':
-    dependencies:
-      '@vitest/spy': 2.1.1
-      estree-walker: 3.0.3
-      magic-string: 0.30.11
-    optionalDependencies:
-      vite: 5.4.6(@types/node@20.16.10)(terser@5.34.1)
-    optional: true
 
   '@vitest/pretty-format@2.1.1':
     dependencies:
@@ -6995,15 +6980,15 @@ snapshots:
       eslint: 9.6.0
       eslint-rule-composer: 0.3.0
     optionalDependencies:
-      '@typescript-eslint/eslint-plugin': 8.0.0-alpha.40(@typescript-eslint/parser@8.0.0-alpha.40(eslint@9.6.0)(typescript@5.6.2))(eslint@9.6.0)(typescript@5.6.2)
+      '@typescript-eslint/eslint-plugin': 8.0.0-alpha.40(@typescript-eslint/parser@7.16.0(eslint@9.6.0)(typescript@5.6.2))(eslint@9.6.0)(typescript@5.6.2)
 
   eslint-plugin-vitest@0.5.4(@typescript-eslint/eslint-plugin@8.0.0-alpha.40(@typescript-eslint/parser@8.0.0-alpha.40(eslint@9.6.0)(typescript@5.6.2))(eslint@9.6.0)(typescript@5.6.2))(eslint@9.6.0)(typescript@5.6.2)(vitest@2.1.1):
     dependencies:
       '@typescript-eslint/utils': 7.16.0(eslint@9.6.0)(typescript@5.6.2)
       eslint: 9.6.0
     optionalDependencies:
-      '@typescript-eslint/eslint-plugin': 8.0.0-alpha.40(@typescript-eslint/parser@8.0.0-alpha.40(eslint@9.6.0)(typescript@5.6.2))(eslint@9.6.0)(typescript@5.6.2)
-      vitest: 2.1.1(@types/node@20.16.10)(@vitest/ui@2.1.1)(jsdom@24.1.0)(terser@5.34.1)
+      '@typescript-eslint/eslint-plugin': 8.0.0-alpha.40(@typescript-eslint/parser@7.16.0(eslint@9.6.0)(typescript@5.6.2))(eslint@9.6.0)(typescript@5.6.2)
+      vitest: 2.1.1(@types/node@20.14.10)(@vitest/ui@2.1.1)(jsdom@24.1.0)(terser@5.34.1)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -7446,7 +7431,7 @@ snapshots:
       mdast-util-mdxjs-esm: 2.0.1
       property-information: 6.5.0
       space-separated-tokens: 2.0.2
-      style-to-object: 1.0.6
+      style-to-object: 1.0.8
       unist-util-position: 5.0.0
       vfile-message: 4.0.2
     transitivePeerDependencies:
@@ -7535,8 +7520,6 @@ snapshots:
   inherits@2.0.4: {}
 
   inline-style-parser@0.1.1: {}
-
-  inline-style-parser@0.2.3: {}
 
   inline-style-parser@0.2.4: {}
 
@@ -9129,10 +9112,6 @@ snapshots:
     dependencies:
       inline-style-parser: 0.1.1
 
-  style-to-object@1.0.6:
-    dependencies:
-      inline-style-parser: 0.2.3
-
   style-to-object@1.0.8:
     dependencies:
       inline-style-parser: 0.2.4
@@ -9187,7 +9166,7 @@ snapshots:
     dependencies:
       svelte: 5.1.0
 
-  svelte-toolbelt@0.4.4(svelte@5.1.0):
+  svelte-toolbelt@0.4.6(svelte@5.1.0):
     dependencies:
       clsx: 2.1.1
       style-to-object: 1.0.8
@@ -9504,24 +9483,6 @@ snapshots:
       - supports-color
       - terser
 
-  vite-node@2.1.1(@types/node@20.16.10)(terser@5.34.1):
-    dependencies:
-      cac: 6.7.14
-      debug: 4.3.7
-      pathe: 1.1.2
-      vite: 5.4.6(@types/node@20.16.10)(terser@5.34.1)
-    transitivePeerDependencies:
-      - '@types/node'
-      - less
-      - lightningcss
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-    optional: true
-
   vite@5.3.3(@types/node@20.16.10)(terser@5.34.1):
     dependencies:
       esbuild: 0.21.5
@@ -9542,17 +9503,6 @@ snapshots:
       fsevents: 2.3.3
       terser: 5.34.1
 
-  vite@5.4.6(@types/node@20.16.10)(terser@5.34.1):
-    dependencies:
-      esbuild: 0.21.5
-      postcss: 8.4.47
-      rollup: 4.22.2
-    optionalDependencies:
-      '@types/node': 20.16.10
-      fsevents: 2.3.3
-      terser: 5.34.1
-    optional: true
-
   vitefu@1.0.2(vite@5.3.3(@types/node@20.16.10)(terser@5.34.1)):
     optionalDependencies:
       vite: 5.3.3(@types/node@20.16.10)(terser@5.34.1)
@@ -9564,7 +9514,7 @@ snapshots:
   vitest@2.1.1(@types/node@20.14.10)(@vitest/ui@2.1.1)(jsdom@24.1.0)(terser@5.34.1):
     dependencies:
       '@vitest/expect': 2.1.1
-      '@vitest/mocker': 2.1.1(@vitest/spy@2.1.1)(vite@5.4.6(@types/node@20.14.10)(terser@5.34.1))
+      '@vitest/mocker': 2.1.1(@vitest/spy@2.1.1)(vite@5.4.6)
       '@vitest/pretty-format': 2.1.1
       '@vitest/runner': 2.1.1
       '@vitest/snapshot': 2.1.1
@@ -9596,43 +9546,6 @@ snapshots:
       - sugarss
       - supports-color
       - terser
-
-  vitest@2.1.1(@types/node@20.16.10)(@vitest/ui@2.1.1)(jsdom@24.1.0)(terser@5.34.1):
-    dependencies:
-      '@vitest/expect': 2.1.1
-      '@vitest/mocker': 2.1.1(@vitest/spy@2.1.1)(vite@5.4.6(@types/node@20.16.10)(terser@5.34.1))
-      '@vitest/pretty-format': 2.1.1
-      '@vitest/runner': 2.1.1
-      '@vitest/snapshot': 2.1.1
-      '@vitest/spy': 2.1.1
-      '@vitest/utils': 2.1.1
-      chai: 5.1.1
-      debug: 4.3.7
-      magic-string: 0.30.11
-      pathe: 1.1.2
-      std-env: 3.7.0
-      tinybench: 2.9.0
-      tinyexec: 0.3.0
-      tinypool: 1.0.0
-      tinyrainbow: 1.2.0
-      vite: 5.4.6(@types/node@20.16.10)(terser@5.34.1)
-      vite-node: 2.1.1(@types/node@20.16.10)(terser@5.34.1)
-      why-is-node-running: 2.3.0
-    optionalDependencies:
-      '@types/node': 20.16.10
-      '@vitest/ui': 2.1.1(vitest@2.1.1)
-      jsdom: 24.1.0
-    transitivePeerDependencies:
-      - less
-      - lightningcss
-      - msw
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-    optional: true
 
   vue-eslint-parser@9.4.3(eslint@9.6.0):
     dependencies:
