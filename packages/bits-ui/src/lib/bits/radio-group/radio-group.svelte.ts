@@ -4,10 +4,7 @@ import type { ReadableBoxedValues, WritableBoxedValues } from "$lib/internal/box
 import type { WithRefProps } from "$lib/internal/types.js";
 import { getAriaChecked, getAriaRequired, getDataDisabled } from "$lib/internal/attrs.js";
 import type { Orientation } from "$lib/shared/index.js";
-import {
-	type UseRovingFocusReturn,
-	useRovingFocus,
-} from "$lib/internal/use-roving-focus.svelte.js";
+import { RovingFocusGroup } from "$lib/internal/use-roving-focus.svelte.js";
 import { createContext } from "$lib/internal/create-context.js";
 import { kbd } from "$lib/internal/kbd.js";
 
@@ -33,7 +30,7 @@ class RadioGroupRootState {
 	orientation: RadioGroupRootStateProps["orientation"];
 	name: RadioGroupRootStateProps["name"];
 	value: RadioGroupRootStateProps["value"];
-	rovingFocusGroup: UseRovingFocusReturn;
+	rovingFocusGroup: RovingFocusGroup;
 	hasValue = $derived.by(() => this.value.current !== "");
 
 	constructor(props: RadioGroupRootStateProps) {
@@ -45,10 +42,9 @@ class RadioGroupRootState {
 		this.name = props.name;
 		this.value = props.value;
 		this.#ref = props.ref;
-
-		this.rovingFocusGroup = useRovingFocus({
+		this.rovingFocusGroup = new RovingFocusGroup({
 			rootNodeId: this.#id,
-			candidateAttr: RADIO_GROUP_ITEM_ATTR,
+			candidateSelector: `[${RADIO_GROUP_ITEM_ATTR}]:not([data-disabled])`,
 			loop: this.loop,
 			orientation: this.orientation,
 		});
@@ -135,7 +131,12 @@ class RadioGroupItemState {
 			this.#root.setValue(this.#value.current);
 			return;
 		}
-		this.#root.rovingFocusGroup.handleKeydown(this.#ref.current, e, true);
+		this.#root.rovingFocusGroup.handleKeydown({
+			node: this.#ref.current,
+			event: e,
+			orientation: this.#root.orientation.current,
+			both: true,
+		});
 	};
 
 	#tabIndex = $state(0);
