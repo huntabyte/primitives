@@ -1,3 +1,4 @@
+import { getWindow, hasWindow } from "./dom.js";
 import type { FocusableTarget } from "./focus.js";
 
 export const isBrowser = typeof document !== "undefined";
@@ -20,8 +21,9 @@ export function isFunction(value: unknown): value is (...args: unknown[]) => unk
 	return typeof value === "function";
 }
 
-export function isHTMLElement(element: unknown): element is HTMLElement {
-	return element instanceof HTMLElement;
+export function isHTMLElement(value: unknown): value is HTMLElement {
+	if (!hasWindow()) return false;
+	return value instanceof HTMLElement || value instanceof getWindow(value).HTMLElement;
 }
 
 export function isElement(element: unknown): element is Element {
@@ -76,4 +78,21 @@ export function isElementHidden(node: HTMLElement, stopAt?: HTMLElement) {
 		node = node.parentElement as HTMLElement;
 	}
 	return false;
+}
+
+export function isSafari() {
+	// Chrome DevTools does not complain about navigator.vendor
+	return /apple/i.test(navigator.vendor);
+}
+
+// eslint-disable-next-line ts/no-explicit-any
+export function isNode(value: any): value is Node {
+	if (!hasWindow()) return false;
+	return value instanceof Node || value instanceof getWindow(value).Node;
+}
+
+export function isShadowRoot(value: unknown): value is ShadowRoot {
+	if (!hasWindow() || typeof ShadowRoot === "undefined") return false;
+
+	return value instanceof ShadowRoot || value instanceof getWindow(value).ShadowRoot;
 }

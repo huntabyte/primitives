@@ -12,7 +12,7 @@ import {
 	size,
 } from "@floating-ui/dom";
 import { box, cssToStyleObj, styleToString, useRefById } from "svelte-toolbelt";
-import { ElementSize } from "runed";
+import { ElementSize, watch } from "runed";
 import type { Arrayable, WithRefProps } from "$lib/internal/types.js";
 import { isNotNull } from "$lib/internal/is.js";
 import { useId } from "$lib/internal/use-id.js";
@@ -266,12 +266,12 @@ class FloatingContentState {
 			this.root.customAnchorNode.current = props.customAnchor.current;
 		}
 
-		$effect(() => {
-			props.customAnchor.current;
-			untrack(() => {
-				this.root.customAnchorNode.current = props.customAnchor.current;
-			});
-		});
+		watch(
+			() => props.customAnchor.current,
+			(customAnchor) => {
+				this.root.customAnchorNode.current = customAnchor;
+			}
+		);
 
 		useRefById({
 			id: this.wrapperId,
@@ -299,23 +299,28 @@ class FloatingContentState {
 			open: () => this.enabled.current,
 		});
 
-		$effect(() => {
-			if (!this.floating.isPositioned) return;
-			this.onPlaced?.current();
-		});
+		watch(
+			() => this.floating.isPositioned,
+			(isPositioned) => {
+				if (!isPositioned) return;
+				this.onPlaced?.current();
+			}
+		);
 
-		$effect(() => {
-			const contentNode = this.contentRef.current;
-			if (!contentNode) return;
-
-			untrack(() => {
+		watch(
+			() => this.contentRef.current,
+			(contentNode) => {
+				if (!contentNode) return;
 				this.contentZIndex = window.getComputedStyle(contentNode).zIndex;
-			});
-		});
+			}
+		);
 
-		$effect(() => {
-			this.floating.floating.current = this.wrapperRef.current;
-		});
+		watch(
+			() => this.wrapperRef.current,
+			(wrapperNode) => {
+				this.floating.floating.current = wrapperNode;
+			}
+		);
 	}
 }
 
